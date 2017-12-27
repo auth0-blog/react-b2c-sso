@@ -1,0 +1,15 @@
+{
+  "short_name": "Auth0 B2C Use Case",
+  "name": "B2C Application secured with Auth0 and SSO",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

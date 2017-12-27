@@ -1,0 +1,12 @@
+input.react-auth0 {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  line-height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+input.react-auth0::placeholder {
+  text-align: right;
+  color: #aaa;
+}

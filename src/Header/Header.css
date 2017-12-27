@@ -1,0 +1,15 @@
+div.app-header {
+  display: flex;
+  flex-direction: row;
+}
+
+div.app-header-links {
+  flex-grow: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+div.app-header-links :last-child {
+  margin-right: 0;
+}

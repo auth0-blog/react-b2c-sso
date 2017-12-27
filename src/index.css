@@ -1,0 +1,39 @@
+html, body {
+  background-color: #fff;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+  color: #5C666F;
+  line-height: 28px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+#root {
+  max-width: 940px;
+  flex-grow: 2;
+}
+
+.default-font-size {
+  font-size: 14px;
+}
+
+a {
+  cursor: pointer;
+  color: #5C666F;
+  text-decoration: none;
+}
+
+a.dashed {
+  border-bottom: 1px dashed #5C666F;
+}
+
+*:focus {
+  outline: none;
+}

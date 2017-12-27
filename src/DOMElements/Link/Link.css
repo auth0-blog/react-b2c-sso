@@ -1,0 +1,10 @@
+a.react-auth0 {
+  border: 1px solid #d0d2d3;
+  border-radius: 3px;
+  background-color: #f5f7f9;
+  padding: 5px 10px 5px 10px;
+  color: #5c666f;
+  margin-right: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
