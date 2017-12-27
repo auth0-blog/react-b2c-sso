@@ -24,5 +24,16 @@
   "bugs": {
     "url": "https://github.com/auth0-blog/react-b2c-sso/issues"
   },
-  "homepage": "https://github.com/auth0-blog/react-b2c-sso#readme"
+  "homepage": "https://github.com/auth0-blog/react-b2c-sso#readme",
+  "dependencies": {
+    "auth0-js": "^9.0.1",
+    "auth0-web": "^1.3.7",
+    "axios": "^0.17.1",
+    "mask-js": "^1.2.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.0.17"
+  }
 }
