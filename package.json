@@ -1,0 +1,24 @@
+{
+  "name": "react-b2c-sso",
+  "version": "1.0.0",
+  "description": "Repository that accompanies a B2C use case.",
+  "main": "index.js",
+  "author": {
+    "name" : "Bruno Krebs",
+    "email" : "krebs.bruno@gmail.com",
+    "url" : "https://twitter.com/brunoskrebs/"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auth0-blog/react-b2c-sso.git"
+  },
+  "keywords": ["react", "sso", "b2c"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/auth0-blog/react-b2c-sso/issues"
+  },
+  "homepage": "https://github.com/auth0-blog/react-b2c-sso#readme"
+}
