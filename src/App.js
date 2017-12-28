@@ -33,8 +33,9 @@ class App extends Component {
     if (signedIn && pathname === '/callback') {
       return <Redirect to="/products"/>
     }
-    const restrictedPaths = ['products'];
-    if (!signedIn && restrictedPaths.includes(`/${pathname}`)) {
+    const restrictedPaths = ['/products'];
+    console.log(pathname);
+    if (!signedIn && restrictedPaths.includes(pathname)) {
       return <Redirect to="/"/>
     }
     return (
