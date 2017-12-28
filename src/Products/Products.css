@@ -1,0 +1,14 @@
+div.productsList {
+  display: flex;
+}
+
+div.productsList div.product {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+div.productsList div.product:last-child {
+  margin-right: 0;
+}
