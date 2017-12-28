@@ -14,8 +14,16 @@ app.use(bodyParser.json());
 // enable cross-origin request
 app.use(cors());
 
+// serve images
+app.use(express.static('static'));
+
+const products = process.env.REACT_APP_REST_PORT === '3001'
+  ? require('./producs-house.json')
+  : require('./producs-kids.json');
+
 const checkJwt = jwt({
-  // Dynamically provide a signing key based on the kid in the header and the singing keys provided by the JWKS endpoint.
+  // Dynamically provide a signing key based on the kid in the header
+  // and the singing keys provided by the JWKS endpoint.
   secret: jwksRsa.expressJwtSecret({
     cache: true,
     rateLimit: true,
@@ -31,7 +39,7 @@ const checkJwt = jwt({
 
 // create timesheets upload API endpoint
 app.get('/products', checkJwt, jwtAuthz([ 'get:products' ]), function(req, res){
-  res.status(201).send([]);
+  res.status(201).send(products);
 });
 
 // launch the API Server at localhost:8080

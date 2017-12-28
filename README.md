@@ -62,7 +62,7 @@ export REACT_APP_AUTH0_CLIENT_ID=JCNBfSZ3OrKqI2yoVQ3vnhp6qaNcYl2c
 export REACT_APP_AUTH0_REDIRECT_URI=http://localhost:3000/callback
 export REACT_APP_REST_PORT=3001
 
-npm start
+npm start &
 ```
 
 Start second application.
