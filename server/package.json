@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Simple Node.js/Express application secure with Auth0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Bruno Krebs",
+    "email": "krebs.bruno@gmail.com",
+    "url": "https://twitter.com/brunoskrebs/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express-jwt-authz": "^1.0.0"
+  }
+}

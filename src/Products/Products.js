@@ -2,15 +2,14 @@ import React, {Component} from 'react';
 import Panel from '../DOMElements/Panel/Panel';
 import Table from '../DOMElements/Table/Table';
 import {withRouter} from 'react-router-dom';
-import {loadEntityList} from '../RestFlex/RestFlex';
+import axios from "axios";
+import * as Auth0 from "auth0-web";
 
 class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {products: []};
-    this.loadProductsList = loadEntityList('products', process.env.REACT_APP_AUTH0_AUDIENCE,
-      'get:products').bind(this);
-    this.componentDidMount = this.loadProductsList;
+    this.componentDidMount = loadProducts.bind(this);
   }
 
   render() {
@@ -31,3 +30,14 @@ class Products extends Component {
 }
 
 export default withRouter(props => <Products {...props} />);
+
+async function loadProducts() {
+  const accessToken = localStorage.getItem(Auth0.ACCESS_TOKEN);
+  const config = {
+    url: `http://localhost:${process.env.REACT_APP_REST_PORT}/products`,
+    headers: {'Authorization': `Bearer ${accessToken}`}
+  };
+
+  const products = (await axios(config)).data;
+  this.setState({ products });
+}
