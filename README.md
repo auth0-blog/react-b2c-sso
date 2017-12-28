@@ -56,6 +56,7 @@ docker run --name second-b2c-api \
 Start first application.
 
 ```bash
+export PORT=3000
 export REACT_APP_AUTH0_DOMAIN=bk-samples.auth0.com
 export REACT_APP_AUTH0_AUDIENCE=https://first-b2c-api.digituz.com.br
 export REACT_APP_AUTH0_CLIENT_ID=JCNBfSZ3OrKqI2yoVQ3vnhp6qaNcYl2c
