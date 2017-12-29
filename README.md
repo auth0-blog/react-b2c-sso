@@ -27,33 +27,6 @@ npm i \
 - Add `http://localhost:4000` to "Allowed Web Origins"
 - [Create "react-B2C-auth0-sso" project on Google](https://auth0.com/docs/connections/social/google)
 
-```bash
-docker network create b2c
-
-docker run --name b2c-mongo-db \
-  --network b2c \
-  -p 27017:27017 \
-  -d mongo
-
-docker run --name first-b2c-api \
-  --network b2c \
-  -e "DOMAIN=products" \
-  -e "MONGODB_URL=b2c-mongo-db:27017/first-b2c-api" \
-  -e "AUTH0_DOMAIN=bk-samples.auth0.com" \
-  -e "AUTH0_AUDIENCE=https://first-b2c-api.digituz.com.br" \
-  -p 3001:3001 \
-  -d brunokrebs/secured-wildcard
-
-docker run --name second-b2c-api \
-  --network b2c \
-  -e "DOMAIN=products" \
-  -e "MONGODB_URL=b2c-mongo-db:27017/second-b2c-api" \
-  -e "AUTH0_DOMAIN=bk-samples.auth0.com" \
-  -e "AUTH0_AUDIENCE=https://second-b2c-api.digituz.com.br" \
-  -p 4001:3001 \
-  -d brunokrebs/secured-wildcard
-```
-
 Start first application.
 
 ```bash
