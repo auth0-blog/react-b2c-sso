@@ -19,8 +19,13 @@ class App extends Component {
     });
   }
 
-  componentWillMount() {
+  async componentWillMount() {
     const self = this;
+    Auth0.silentAuth('b2c-sso', process.env.REACT_APP_AUTH0_AUDIENCE, 'get:products').then(() => {
+      self.setState({signedIn: true});
+    }).catch(() => {
+      console.log('needs to login');
+    });
     Auth0.handleAuthCallback();
     Auth0.subscribe((signedIn) => {
       self.setState({signedIn});
@@ -30,11 +35,10 @@ class App extends Component {
   render() {
     const {pathname} = this.props.location;
     const {signedIn} = this.state;
-    if (signedIn && pathname === '/callback') {
+    if (signedIn && pathname !== '/products') {
       return <Redirect to="/products"/>
     }
     const restrictedPaths = ['/products'];
-    console.log(pathname);
     if (!signedIn && restrictedPaths.includes(pathname)) {
       return <Redirect to="/"/>
     }
