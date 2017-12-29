@@ -25,6 +25,7 @@ npm i \
 - Create second client
 - Add `http://localhost:4000/callback` to "Allowed Callback URLs"
 - Add `http://localhost:4000` to "Allowed Web Origins"
+- [Create "react-B2C-auth0-sso" project on Google](https://auth0.com/docs/connections/social/google)
 
 ```bash
 docker network create b2c
