@@ -2,9 +2,6 @@
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const express = require('express');
-const jwt = require('express-jwt');
-const jwtAuthz = require('express-jwt-authz');
-const jwksRsa = require('jwks-rsa');
 
 const app = express();
 
@@ -17,30 +14,17 @@ app.use(cors());
 // serve images
 app.use(express.static('static'));
 
+// deciding the portal type based on
+// the REACT_APP_REST_PORT env variable
 const products = process.env.REACT_APP_REST_PORT === '3001'
   ? require('./producs-house.json')
   : require('./producs-kids.json');
 
-const checkJwt = jwt({
-  // Dynamically provide a signing key based on the kid in the header
-  // and the singing keys provided by the JWKS endpoint.
-  secret: jwksRsa.expressJwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 5,
-    jwksUri: `https://bk-samples.auth0.com/.well-known/jwks.json`
-  }),
-
-  // Validate the audience and the issuer.
-  audience: process.env.REACT_APP_AUTH0_AUDIENCE,
-  issuer: `https://bk-samples.auth0.com/`,
-  algorithms: ['RS256']
-});
-
-// create timesheets upload API endpoint
-app.get('/products', checkJwt, jwtAuthz([ 'get:products' ]), function(req, res){
+// API endpoint to list products
+app.get('/products', (req, res) => {
   res.status(201).send(products);
 });
 
-// launch the API Server at localhost:8080
+// launch the API Server at the port configured in the
+// REACT_APP_REST_PORT environment variable
 app.listen(process.env.REACT_APP_REST_PORT);

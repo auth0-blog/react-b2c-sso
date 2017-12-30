@@ -14,7 +14,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "cors": "^2.8.4",
-    "express-jwt-authz": "^1.0.0"
+    "cors": "^2.8.4"
   }
 }
