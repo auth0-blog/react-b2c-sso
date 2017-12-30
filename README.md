@@ -1,18 +1,5 @@
 ## Installing Dependencies
 
-```bash
-npm i \
-    auth0-js \
-    auth0-web \
-    axios \
-    mask-js \
-    react \
-    react-dom \
-    react-router \
-    react-router-dom \
-    react-scripts
-```
-
 ## Launching the Application
 
 - Create first api
@@ -20,7 +7,7 @@ npm i \
 - Create second api
 - Add scope
 - Create first client
-- Add `http://localhost:3000/callback` to "Allowed Callback URLs"
+- Add `http://localhost:3000/callback` to "Allow49456 - Diogo Carvalho De Oliveira, RS, 36 anosed Callback URLs"
 - Add `http://localhost:3000` to "Allowed Web Origins"
 - Create second client
 - Add `http://localhost:4000/callback` to "Allowed Callback URLs"
@@ -31,10 +18,6 @@ Start first application.
 
 ```bash
 export PORT=3000
-export REACT_APP_AUTH0_DOMAIN=bk-samples.auth0.com
-export REACT_APP_AUTH0_AUDIENCE=https://first-b2c-api.digituz.com.br
-export REACT_APP_AUTH0_CLIENT_ID=JCNBfSZ3OrKqI2yoVQ3vnhp6qaNcYl2c
-export REACT_APP_AUTH0_REDIRECT_URI=http://localhost:3000/callback
 export REACT_APP_REST_PORT=3001
 
 npm start &
@@ -44,11 +27,7 @@ Start second application.
 
 ```bash
 export PORT=4000
-export REACT_APP_AUTH0_DOMAIN=bk-samples.auth0.com
-export REACT_APP_AUTH0_AUDIENCE=https://second-b2c-api.digituz.com.br
-export REACT_APP_AUTH0_CLIENT_ID=lZizKzMTuEGuSlmtdWxsqC6vzH8qdsHQ
-export REACT_APP_AUTH0_REDIRECT_URI=http://localhost:4000/callback
 export REACT_APP_REST_PORT=4001
 
-npm start
+npm start &
 ```
