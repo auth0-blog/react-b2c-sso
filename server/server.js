@@ -2,6 +2,9 @@
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const express = require('express');
+const jwt = require('express-jwt');
+const jwtAuthz = require('express-jwt-authz');
+const jwksRsa = require('jwks-rsa');
 
 const app = express();
 
@@ -23,6 +26,25 @@ const products = process.env.REACT_APP_REST_PORT === '3001'
 // API endpoint to list products
 app.get('/products', (req, res) => {
   res.status(201).send(products);
+});
+
+const checkJwt = jwt({
+  // Dynamically provide a signing key based on the kid in the header
+  // and the singing keys provided by the JWKS endpoint.
+  secret: jwksRsa.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: `https://${process.env.REACT_APP_AUTH0_DOMAIN}/.well-known/jwks.json`
+  }),
+  // Validate the audience and the issuer.
+  audience: process.env.REACT_APP_AUTH0_AUDIENCE,
+  issuer: `https://${process.env.REACT_APP_AUTH0_DOMAIN}//`,
+  algorithms: ['RS256']
+});
+
+app.post('/buy', checkJwt, jwtAuthz([ 'get:products' ]), (req, res) => {
+  res.status(201).send({message: 'Thank you for buying. You make me happy!'});
 });
 
 // launch the API Server at the port configured in the
