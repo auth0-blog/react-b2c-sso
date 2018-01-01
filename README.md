@@ -18,6 +18,11 @@ Start first application.
 
 ```bash
 export PORT=3000
+export REACT_APP_AUTH0_DOMAIN=bk-samples.auth0.com
+export REACT_APP_AUTH0_AUDIENCE=https://homeproducts.ourcompany.com
+export REACT_APP_AUTH0_CLIENT_ID=JCNBfSZ3OrKqI2yoVQ3vnhp6qaNcYl2c
+export REACT_APP_AUTH0_REDIRECT_URI=http://app.local:3000/callback
+export REACT_APP_AUTH0_SIGN_OUT_REDIRECT_URI=http://app.local:3000/
 export REACT_APP_REST_PORT=3001
 
 npm start &
@@ -27,6 +32,11 @@ Start second application.
 
 ```bash
 export PORT=4000
+export REACT_APP_AUTH0_DOMAIN=bk-samples.auth0.com
+export REACT_APP_AUTH0_AUDIENCE=https://kidsproducts.ourcompany.com
+export REACT_APP_AUTH0_CLIENT_ID=lZizKzMTuEGuSlmtdWxsqC6vzH8qdsHQ
+export REACT_APP_AUTH0_REDIRECT_URI=http://app.local:4000/callback
+export REACT_APP_AUTH0_SIGN_OUT_REDIRECT_URI=http://app.local:4000/
 export REACT_APP_REST_PORT=4001
 
 npm start &

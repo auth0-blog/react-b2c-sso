@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/auth0-blog/react-b2c-sso#readme",
   "dependencies": {
+    "auth0-web": "^1.4.2",
     "axios": "^0.17.1",
     "mask-js": "^1.2.1",
     "react": "^16.2.0",
