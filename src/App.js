@@ -11,7 +11,7 @@ Auth0.configure({
   clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
   redirectUri: process.env.REACT_APP_AUTH0_REDIRECT_URI,
   responseType: 'token id_token',
-  scope: 'openid get:products'
+  scope: 'get:products'
 });
 
 class App extends Component {
@@ -19,7 +19,6 @@ class App extends Component {
   componentWillMount() {
     const self = this;
 
-    Auth0.handleAuthCallback();
     Auth0.subscribe(async (signedIn) => {
       if (signedIn) {
         return self.setState({signedIn});
