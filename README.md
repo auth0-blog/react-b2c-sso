@@ -7,7 +7,7 @@
 - Create second api
 - Add scope
 - Create first client
-- Add `http://localhost:3000/callback` to "Allow49456 - Diogo Carvalho De Oliveira, RS, 36 anosed Callback URLs"
+- Add `http://localhost:3000/callback` to "Allowed Callback URLs"
 - Add `http://localhost:3000` to "Allowed Web Origins"
 - Create second client
 - Add `http://localhost:4000/callback` to "Allowed Callback URLs"
