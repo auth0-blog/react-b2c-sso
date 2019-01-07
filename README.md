@@ -1,4 +1,16 @@
+# Implementing Single Sign-On in B2C Applications
+
+Learn how a B2C Company implemented Single Sign-On to provide seamless integration between different e-commerce portals.
+
+Read more at: https://auth0.com/blog/implementing-single-sign-on-in-b2c-applications/
+
 ## Installing Dependencies
+
+Just issue the following command:
+
+```bash
+npm install
+```
 
 ## Launching the Application
 
